@@ -1,0 +1,26 @@
+<h1>The Admin Page!</h1>
+
+
+<ul>
+    {{#each users}}
+    <li>
+        <i>Full Name:</i>
+        <b> {{FirstName}} {{LastName}} </b>
+        <br />
+        <i>Email:</i>
+        <b>{{Email}}</b>
+        <br />
+        <i>User Name:</i>
+        <b> {{Username}}</b>
+        <br />
+        <i>User Id:</i>
+        <b> {{UserId}}</b>
+        <br />
+    </li>
+    <br />
+    <form action="/users/admin/delete/{{UserId}}">
+        <button type="submit">DELETE</button>
+    </form>
+    <br />
+    {{/each}}
+</ul>

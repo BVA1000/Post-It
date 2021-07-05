@@ -1,0 +1,38 @@
+<h1>Add a new PostIt!</h1>
+<form action="/posts/posts" method="POST">
+    <div id="inputs">
+        <input type="text" name="PostTitle" placeholder="Title!">
+    </div>
+    <br />
+    <div id="postbody">
+        <textarea rows="8" cols="35" type="text" name="PostBody" placeholder="Post It Here!"></textarea>
+    </div>
+    <br />
+    <div>
+        <button type="submit">SUBMIT</button>
+    </div>
+</form>
+
+<form action="/posts/posts" method="GET">
+    <ul>
+        {{#each posts}}
+        <br />
+        <li>
+            <b>Title:</b>
+            <i>{{PostTitle}}</i>
+            <b>Body:</b>
+            <i>{{PostBody}}</i>
+            <br />
+            <br />
+            <form action="/posts/posts/update/{{UserId}}">
+                <button type="submit">UPDATE</button>
+            </form>
+            <br />
+            <form action="/posts/posts/delete/{{UserId}}">
+                <button type="submit">DELETE</button>
+            </form>
+        </li>
+        <br />
+        {{/each}}
+    </ul>
+</form>
